@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: winvibe-notify
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: FIREBASE_SERVICE_ACCOUNT
+        sync: false
+      - key: NOTIFY_LANG
+        value: bn
